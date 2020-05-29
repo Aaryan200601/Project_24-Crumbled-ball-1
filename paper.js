@@ -9,9 +9,8 @@ class Paper
             density:1.2
         }
 
-        this.body = Bodies.rectangle(x, y, 50, 50, options);
-        this.width = 50;
-        this.height = 50;
+        this.body = Bodies.circle(x, y, 30, options);
+        this.radius = 30;
         World.add(world,this.body);
         
     }
@@ -20,9 +19,9 @@ class Paper
         var angle = this.body.angle;
         push();
         translate(this.body.position.x, this.body.position.y);
-        rectMode(CENTER);
+        ellipseMode(CENTER);
         fill("white");
-        rect(0, 0, this.width, this.height);
+        ellipse(0, 0, this.width, this.height);
         pop();
     }
 }
